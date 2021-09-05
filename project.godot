@@ -13,10 +13,26 @@ _global_script_classes=[ {
 "class": "Character",
 "language": "GDScript",
 "path": "res://Testing/Character.gd"
+}, {
+"base": "StaticBody",
+"class": "InteractableStaticBody",
+"language": "GDScript",
+"path": "res://Testing/InteractableStaticBody.gd"
+}, {
+"base": "Character",
+"class": "PlayerCharacter",
+"language": "GDScript",
+"path": "res://Testing/PlayerCharacter.gd"
 } ]
 _global_script_class_icons={
-"Character": ""
+"Character": "",
+"InteractableStaticBody": "",
+"PlayerCharacter": ""
 }
+
+[autoload]
+
+Util="*res://Util.gd"
 
 [input]
 
@@ -51,6 +67,11 @@ char_interact={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="Collision"
+3d_physics/layer_2="Interactables"
 
 [rendering]
 

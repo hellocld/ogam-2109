@@ -1,0 +1,4 @@
+class_name InteractableStaticBody
+extends StaticBody
+
+signal interacted_with

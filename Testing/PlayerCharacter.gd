@@ -1,4 +1,8 @@
+class_name PlayerCharacter
 extends Character
+
+
+var _interactable_body:Spatial
 
 
 func _physics_process(delta: float) -> void:
@@ -10,4 +14,17 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("char_interact"):
 		print_debug("Player interacting...")
-		emit_signal("interacting")
+		if _interactable_body && _interactable_body.has_signal(Util.sig_interacted_with):
+			_interactable_body.emit_signal(Util.sig_interacted_with)
+
+
+func _on_InteractArea_body_entered(body: Node) -> void:
+	if body.has_signal(Util.sig_interacted_with):
+		print_debug("Interactable %s detected" % body.name)
+		_interactable_body = body
+
+
+func _on_InteractArea_body_exited(body: Node) -> void:
+	if _interactable_body == body:
+		print_debug("Removing interactable %s" % body.name)
+		_interactable_body = null
