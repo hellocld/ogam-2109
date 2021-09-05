@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/UI_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/Sprites/9-Slice.png" type="Texture" id=2]
+
+[node name="GameUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AlertDialog" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.133
+margin_bottom = 0.199997
+theme = ExtResource( 1 )
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="AlertDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="Label" parent="AlertDialog/MarginContainer"]
+margin_left = 20.0
+margin_top = 33.0
+margin_right = 1004.0
+margin_bottom = 47.0
+text = "Waddup, yo?"
+align = 1

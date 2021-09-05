@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Character",
 "language": "GDScript",
-"path": "res://Testing/Character.gd"
+"path": "res://Characters/Character.gd"
 }, {
 "base": "StaticBody",
 "class": "InteractableStaticBody",
 "language": "GDScript",
-"path": "res://Testing/InteractableStaticBody.gd"
+"path": "res://Utils/InteractableStaticBody.gd"
 }, {
 "base": "Character",
 "class": "PlayerCharacter",
 "language": "GDScript",
-"path": "res://Testing/PlayerCharacter.gd"
+"path": "res://Characters/Player/PlayerCharacter.gd"
 } ]
 _global_script_class_icons={
 "Character": "",
