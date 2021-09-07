@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://Dialog/DialogSet.gd" type="Script" id=1]
+[ext_resource path="res://Dialog/DialogLine.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+Speaker = 1
+Line = "What up dog?"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Speaker = 0
+Line = "Not much, you?"
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+Speaker = 1
+Line = "Nada."
+
+[resource]
+script = ExtResource( 1 )
+Dialog = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

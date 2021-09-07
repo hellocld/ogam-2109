@@ -1,28 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/UI_Theme.tres" type="Theme" id=1]
-[ext_resource path="res://UI/Sprites/9-Slice.png" type="Texture" id=2]
+[ext_resource path="res://UI/UIManager.gd" type="Script" id=2]
+[ext_resource path="res://UI/Sprites/R-214215-1204588562.jpeg.jpg" type="Texture" id=3]
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+DialogUI = NodePath("DialogRect")
+DialogProfile = NodePath("DialogRect/AspectRatioContainer/HBoxContainer/ProfilePanel/MarginContainer/AspectRatioContainer/TextureRect")
+DialogText = NodePath("DialogRect/AspectRatioContainer/HBoxContainer/DialogPanel/MarginContainer/RichTextLabel")
 
-[node name="AlertDialog" type="NinePatchRect" parent="."]
+[node name="AlertDialog" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 0.133
 margin_bottom = 0.199997
 theme = ExtResource( 1 )
-texture = ExtResource( 2 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="AlertDialog"]
 anchor_right = 1.0
@@ -37,8 +36,86 @@ __meta__ = {
 
 [node name="RichTextLabel" type="Label" parent="AlertDialog/MarginContainer"]
 margin_left = 20.0
-margin_top = 33.0
+margin_top = 28.0
 margin_right = 1004.0
-margin_bottom = 47.0
+margin_bottom = 52.0
 text = "Waddup, yo?"
 align = 1
+
+[node name="DialogRect" type="Control" parent="."]
+anchor_top = 0.813
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.199982
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="DialogRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+ratio = 9.101
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogRect/AspectRatioContainer"]
+margin_left = 2.34399
+margin_right = 1021.66
+margin_bottom = 112.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProfilePanel" type="Panel" parent="DialogRect/AspectRatioContainer/HBoxContainer"]
+margin_right = 116.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.13
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogRect/AspectRatioContainer/HBoxContainer/ProfilePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="DialogRect/AspectRatioContainer/HBoxContainer/ProfilePanel/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 108.0
+margin_bottom = 104.0
+
+[node name="TextureRect" type="TextureRect" parent="DialogRect/AspectRatioContainer/HBoxContainer/ProfilePanel/MarginContainer/AspectRatioContainer"]
+margin_left = 2.0
+margin_right = 98.0
+margin_bottom = 96.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogPanel" type="Panel" parent="DialogRect/AspectRatioContainer/HBoxContainer"]
+margin_left = 124.0
+margin_right = 1019.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogRect/AspectRatioContainer/HBoxContainer/DialogPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogRect/AspectRatioContainer/HBoxContainer/DialogPanel/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 887.0
+margin_bottom = 104.0
+text = "Have some dialog buddy."
+scroll_active = false

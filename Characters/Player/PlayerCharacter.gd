@@ -5,6 +5,10 @@ extends Character
 var _interactable_body:Spatial
 
 
+func _ready() -> void:
+	GameManager.register_player(self)
+
+
 func _physics_process(delta: float) -> void:
 	_move_dir.z = Input.get_action_strength("char_move_down") - Input.get_action_strength("char_move_up")
 	_move_dir.x = Input.get_action_strength("char_move_right") - Input.get_action_strength("char_move_left")
@@ -12,6 +16,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if GameManager.get_state() != GameManager.State.EXPLORATION:
+		return
 	if event.is_action_pressed("char_interact"):
 		print_debug("Player interacting...")
 		if _interactable_body && _interactable_body.has_signal(Util.sig_interacted_with):

@@ -14,6 +14,31 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Characters/Character.gd"
 }, {
+"base": "Resource",
+"class": "DialogLine",
+"language": "GDScript",
+"path": "res://Dialog/DialogLine.gd"
+}, {
+"base": "Resource",
+"class": "DialogSet",
+"language": "GDScript",
+"path": "res://Dialog/DialogSet.gd"
+}, {
+"base": "Node",
+"class": "DialogSpeaker",
+"language": "GDScript",
+"path": "res://Dialog/DialogSpeaker.gd"
+}, {
+"base": "Reference",
+"class": "DialogSpeakerRef",
+"language": "GDScript",
+"path": "res://Dialog/DialogSpeakerRef.gd"
+}, {
+"base": "Node",
+"class": "DialogTrigger",
+"language": "GDScript",
+"path": "res://Dialog/DialogTrigger.gd"
+}, {
 "base": "StaticBody",
 "class": "InteractableStaticBody",
 "language": "GDScript",
@@ -26,13 +51,21 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Character": "",
+"DialogLine": "",
+"DialogSet": "",
+"DialogSpeaker": "",
+"DialogSpeakerRef": "",
+"DialogTrigger": "",
 "InteractableStaticBody": "",
 "PlayerCharacter": ""
 }
 
 [autoload]
 
-Util="*res://Util.gd"
+Util="*res://Utils/Util.gd"
+UIManager="*res://UI/Game_UI.tscn"
+GameManager="*res://GameManager.gd"
+DialogManager="*res://Dialog/DialogManager.gd"
 
 [input]
 

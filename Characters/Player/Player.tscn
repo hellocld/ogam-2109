@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Characters/Player/PlayerCharacter.gd" type="Script" id=1]
+[ext_resource path="res://Dialog/DialogSpeaker.gd" type="Script" id=2]
+[ext_resource path="res://UI/Sprites/R-621221-1139559282.jpeg.jpg" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.713726, 0.211765, 0.968627, 1 )
@@ -43,6 +45,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.1 )
 [node name="CollisionShape" type="CollisionShape" parent="InteractArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2 )
 shape = SubResource( 6 )
+
+[node name="DialogSpeaker" type="Node" parent="."]
+script = ExtResource( 2 )
+SpeakerNode = NodePath("..")
+ProfilePic = ExtResource( 3 )
 
 [connection signal="body_entered" from="InteractArea" to="." method="_on_InteractArea_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="." method="_on_InteractArea_body_exited"]
